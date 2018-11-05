@@ -11,7 +11,7 @@ spring:
      ddl-auto: update 
   datasource:
     platform: mysql
-    url: jdbc:mysql://10.145.81.137:3306/inspiratti?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false
+    url: jdbc:mysql://10.145.81.119:3306/inspiratti?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false
     username: root
     password: root@123
   application:
