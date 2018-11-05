@@ -2,7 +2,6 @@
 server:
   port: ${PORT:9007}
   
-
 spring:
   jpa:
     generate-ddl: true
@@ -12,13 +11,23 @@ spring:
      ddl-auto: update 
   datasource:
     platform: mysql
-    url: jdbc:mysql://10.145.81.19:3306/inspiratti?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false
+    url: jdbc:mysql://10.145.81.137:3306/inspiratti?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false
     username: root
-    password: Root@123
+    password: root@123
   application:
     name: dictionary-service
 
+  cloud:
+    azure:
+      credential-file-path: my.azureauth  
+      resource-group: blobstorage    
+      region: Central India
+      storage:
+        account: blobstorageins
 
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
   #contextPath: /resource
 security:
   oauth2:
@@ -31,4 +40,16 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:1111/eureka/
-      
+
+logging:
+  level:
+    org.springframework.web: ERROR
+    com.mkyong: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file: G://application.log
+  
+  feign:
+     okhttp:
+        enabled: true

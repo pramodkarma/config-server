@@ -1,6 +1,3 @@
-
-
-
 server:
   port: ${PORT:9001}
   
@@ -14,11 +11,18 @@ spring:
      ddl-auto: update 
   datasource:
     platform: mysql
-    url: jdbc:mysql://10.145.81.19:3306/inspiratti?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false
+    url: jdbc:mysql://10.145.81.137:3306/inspiratti?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false
     username: root
-    password: Root@123
+    password: root@123
   application:
     name: member-service
+
+
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+
+
 
   #contextPath: /resource
 security:
@@ -42,4 +46,9 @@ logging:
            descriptor:
               sql:
                 BasicBinder: TRACE
-        
+
+  feign:
+  hystrix:
+    enabled: true
+  okhttp:
+    enabled: true
