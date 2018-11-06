@@ -12,7 +12,7 @@ spring:
   datasource:
     platform: mysql
     url: jdbc:mysql://10.145.81.119:3306/inspiratti?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false
-    username: inspiratti
+    username: root
     password: root@123
   application:
     name: member-service
